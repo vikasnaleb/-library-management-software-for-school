@@ -1,0 +1,426 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FE001A43-F4B6-4CAC-BE0B-2F680DB0B0BC}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LibraryManagment</RootNamespace>
+    <AssemblyName>LibraryManagment</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="db">
+      <HintPath>..\..\..\NET\db\db\bin\Debug\db.dll</HintPath>
+    </Reference>
+    <Reference Include="DBForms">
+      <HintPath>..\..\..\NET\db\Forms\bin\Debug\DBForms.dll</HintPath>
+    </Reference>
+    <Reference Include="LiteDB">
+      <HintPath>..\..\..\NET\db\FileDB\bin\Debug\LiteDB.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.cs" />
+    <Compile Include="controllers\Book.cs" />
+    <Compile Include="controllers\Circulation.cs" />
+    <Compile Include="controllers\Settings.cs" />
+    <Compile Include="controllers\Application.cs" />
+    <Compile Include="controllers\MyController.cs" />
+    <Compile Include="controllers\Member.cs" />
+    <Compile Include="controllers\Logs.cs" />
+    <Compile Include="controllers\User.cs" />
+    <Compile Include="Core.cs" />
+    <Compile Include="design\CustomeDesign.cs" />
+    <Compile Include="design\MenuColorTable.cs" />
+    <Compile Include="forms\Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Settings.designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\circulation\CirculationDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\circulation\CirculationDetails.designer.cs">
+      <DependentUpon>CirculationDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\report\FineList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\report\FineList.designer.cs">
+      <DependentUpon>FineList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\About.designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\book\BookCondition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\book\BookCondition.designer.cs">
+      <DependentUpon>BookCondition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\book\BookCoppy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\book\BookCoppy.designer.cs">
+      <DependentUpon>BookCoppy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\book\Category.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\book\Category.designer.cs">
+      <DependentUpon>Category.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\book\Book.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\book\Book.designer.cs">
+      <DependentUpon>Book.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\report\BookCoppisList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\report\BookCoppisList.designer.cs">
+      <DependentUpon>BookCoppisList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\circulation\BookSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\circulation\BookSearch.designer.cs">
+      <DependentUpon>BookSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\report\BookList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\report\BookList.designer.cs">
+      <DependentUpon>BookList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\circulation\CirculationBookIssue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\circulation\CirculationBookIssue.designer.cs">
+      <DependentUpon>CirculationBookIssue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\report\CirculationList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\report\CirculationList.designer.cs">
+      <DependentUpon>CirculationList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\circulation\CirculationBookReturn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\circulation\CirculationBookReturn.designer.cs">
+      <DependentUpon>CirculationBookReturn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Login.designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\logs\SystemLogs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\logs\SystemLogs.designer.cs">
+      <DependentUpon>SystemLogs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\logs\UserLogs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\logs\UserLogs.designer.cs">
+      <DependentUpon>UserLogs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Main.designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\maintanance\Backup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\maintanance\Backup.designer.cs">
+      <DependentUpon>Backup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\report\MemberList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\report\MemberList.designer.cs">
+      <DependentUpon>MemberList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\member\MemberType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\member\MemberType.designer.cs">
+      <DependentUpon>MemberType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\member\Member.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\member\Member.designer.cs">
+      <DependentUpon>Member.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\report\UserList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\report\UserList.designer.cs">
+      <DependentUpon>UserList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\user\Password.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\user\Password.designer.cs">
+      <DependentUpon>Password.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\user\Profile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\user\Profile.designer.cs">
+      <DependentUpon>Profile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\user\User.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\user\User.designer.cs">
+      <DependentUpon>User.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\user\Verify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\user\Verify.designer.cs">
+      <DependentUpon>Verify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="tables\BookCondition.cs" />
+    <Compile Include="tables\Missing.cs" />
+    <Compile Include="tables\BookCoppy.cs" />
+    <Compile Include="tables\MemberType.cs" />
+    <Compile Include="tables\BookPurchase.cs" />
+    <Compile Include="tables\BookCategory.cs" />
+    <Compile Include="tables\Circulation.cs" />
+    <Compile Include="tables\Book.cs" />
+    <Compile Include="tables\Member.cs" />
+    <Compile Include="tables\Application.cs" />
+    <Compile Include="tables\Settings.cs" />
+    <Compile Include="tables\UserLog.cs" />
+    <Compile Include="tables\User.cs" />
+    <Compile Include="tables\views\Book.cs" />
+    <Compile Include="tables\views\BookCoppy.cs" />
+    <Compile Include="tables\views\Circulation.cs" />
+    <EmbeddedResource Include="forms\Settings.resx">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\circulation\CirculationDetails.resx">
+      <DependentUpon>CirculationDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\report\FineList.resx">
+      <DependentUpon>FineList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\book\BookCondition.resx">
+      <DependentUpon>BookCondition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\book\BookCoppy.resx">
+      <DependentUpon>BookCoppy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\book\Category.resx">
+      <DependentUpon>Category.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\book\Book.resx">
+      <DependentUpon>Book.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\report\BookCoppisList.resx">
+      <DependentUpon>BookCoppisList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\circulation\BookSearch.resx">
+      <DependentUpon>BookSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\report\BookList.resx">
+      <DependentUpon>BookList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\circulation\CirculationBookIssue.resx">
+      <DependentUpon>CirculationBookIssue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\report\CirculationList.resx">
+      <DependentUpon>CirculationList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\circulation\CirculationBookReturn.resx">
+      <DependentUpon>CirculationBookReturn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\logs\SystemLogs.resx">
+      <DependentUpon>SystemLogs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\logs\UserLogs.resx">
+      <DependentUpon>UserLogs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\maintanance\Backup.resx">
+      <DependentUpon>Backup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\report\MemberList.resx">
+      <DependentUpon>MemberList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\member\MemberType.resx">
+      <DependentUpon>MemberType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\member\Member.resx">
+      <DependentUpon>Member.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\report\UserList.resx">
+      <DependentUpon>UserList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\user\Password.resx">
+      <DependentUpon>Password.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\user\Profile.resx">
+      <DependentUpon>Profile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\user\User.resx">
+      <DependentUpon>User.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\user\Verify.resx">
+      <DependentUpon>Verify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\First.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Last.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maximize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Print.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sign-add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sign-ban.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sign-check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sign-delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sign-down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sign-error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sign-first.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sign-info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sign-last.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sign-left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sign-question.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sign-right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sign-sync.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sign-up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sign-warning.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
